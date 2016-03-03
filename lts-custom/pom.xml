@@ -373,4 +373,16 @@
             </plugins>
         </pluginManagement>
     </build>
+    <distributionManagement>
+        <repository>
+            <id>glodon-nexus-releases</id>
+            <name>Glodon Nexus Release Repository</name>
+            <url>http://maven.glodon.com/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>glodon-nexus-snapshots</id>
+            <name>Glodon Nexus Snapshot Repository</name>
+            <url>http://maven.glodon.com/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
