@@ -1,0 +1,11 @@
+{
+  "server参数信息": "配置参数信息",
+  "single": true,
+  "isSelfMonitoring": "true",
+
+  "serverId": 1,
+  "clusterName":"uba_cluster",
+  "nodeGroup":"uba_client",
+  "registryAddress":"zookeeper://127.0.0.1:2181"
+
+}

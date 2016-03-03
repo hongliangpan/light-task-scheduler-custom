@@ -1,0 +1,42 @@
+{
+  "beidou": {
+    "说明":"数据库连接配置信息。",
+    "url":"jdbc:mysql://127.0.0.1:3306/rtpp?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true",
+    "driverClassName": "com.mysql.jdbc.Driver",
+    "username": "root",
+    "password": "root",
+    "filters": "stat",
+    "maxActive": "4",
+    "initialSize": "1",
+    "maxWait": "60000",
+    "minIdle": "1",
+    "timeBetweenEvictionRunsMillis": "3000",
+    "minEvictableIdleTimeMillis": "300000",
+    "validationQuery": "SELECT 'x'",
+    "testWhileIdle": "true",
+    "testOnBorrow": "false",
+    "testOnReturn": "false",
+    "poolPreparedStatements": "true",
+    "maxPoolPreparedStatementPerConnectionSize": "20"
+  },
+  "uba": {
+    "说明":"数据库连接配置信息。",
+    "url":"jdbc:mysql://127.0.0.1:3306/ysg_uba?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true",
+    "driverClassName": "com.mysql.jdbc.Driver",
+    "username": "root",
+    "password": "toor",
+    "filters": "stat",
+    "maxActive": "100",
+    "initialSize": "2",
+    "maxWait": "60000",
+    "minIdle": "2",
+    "timeBetweenEvictionRunsMillis": "3000",
+    "minEvictableIdleTimeMillis": "300000",
+    "validationQuery": "SELECT 'x'",
+    "testWhileIdle": "true",
+    "testOnBorrow": "false",
+    "testOnReturn": "false",
+    "poolPreparedStatements": "true",
+    "maxPoolPreparedStatementPerConnectionSize": "20"
+  }
+}
