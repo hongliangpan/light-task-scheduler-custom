@@ -33,7 +33,7 @@ public class UbaJobSubmitterDemo implements JobSubmitter {
             this.conf = conf;
             // 推荐使用RetryJobClient
             JobClient jobClient = new RetryJobClient();
-            jobClient.setNodeGroup(getConfig("nodeGroup"));
+            jobClient.setNodeGroup(getConfig("nodeGroup")+"client");
             jobClient.setClusterName(getConfig("clusterName"));
             jobClient.setRegistryAddress(getConfig("registryAddress"));
             jobClient.setJobFinishedHandler(new JobCompletedHandlerImpl());

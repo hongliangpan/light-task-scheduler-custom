@@ -55,6 +55,7 @@ public class EmbedJobClient {
             String jobSubmitterClass = getConfig("jobSubmitterClass");
             JobSubmitter jobSubmitter = (JobSubmitter) ClassHelper.forName(jobSubmitterClass).newInstance();
             jobSubmitter.submitJob(conf);
+            LOGGER.info("jobSubmitterClass:"+jobSubmitterClass);
         } catch (Exception e) {
             LOGGER.error(e.getMessage(), e);
         }
