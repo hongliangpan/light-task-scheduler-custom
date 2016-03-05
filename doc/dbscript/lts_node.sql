@@ -10,6 +10,6 @@ CREATE TABLE `lts_node` (
 	`createTime` BIGINT (20) COMMENT '创建时间',
 	`threads` INT (11) COMMENT '线程数',
 	`hostName` VARCHAR (64) COMMENT '主机名',
-	`commandPort` INT (11) COMMENT '命令端口',
+	`httpCmdPort` INT (11) COMMENT '命令端口',
 	PRIMARY KEY (`identity`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT '节点'
