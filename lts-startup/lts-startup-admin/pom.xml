@@ -14,11 +14,7 @@
         <jetty.version>9.3.7.v20160115</jetty.version>
     </properties>
     <dependencies>
-        <dependency>
-            <groupId>org.eclipse.jetty.aggregate</groupId>
-            <artifactId>jetty-all</artifactId>
-            <version>9.3.7.v20160115</version>
-        </dependency>
+
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
@@ -29,6 +25,18 @@
             <artifactId>jsp-2.1-glassfish</artifactId>
             <version>2.1.v20100127</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-server</artifactId>
+            <version>${jetty.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-webapp</artifactId>
+            <version>${jetty.version}</version>
+        </dependency>
+        <!--
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-client</artifactId>
@@ -83,9 +91,9 @@
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-quickstart</artifactId>
             <version>${jetty.version}</version>
-        </dependency>
+        </dependency>-->
         <!--  websocket support  -->
-        <dependency>
+        <!--<dependency>
             <groupId>org.eclipse.jetty.websocket</groupId>
             <artifactId>websocket-servlet</artifactId>
             <version>${jetty.version}</version>
@@ -99,9 +107,9 @@
             <groupId>org.eclipse.jetty.websocket</groupId>
             <artifactId>websocket-client</artifactId>
             <version>${jetty.version}</version>
-        </dependency>
+        </dependency>-->
         <!--  http/2 support  -->
-        <dependency>
+        <!--<dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-alpn-client</artifactId>
             <version>${jetty.version}</version>
@@ -115,7 +123,7 @@
             <groupId>org.eclipse.jetty.http2</groupId>
             <artifactId>http2-client</artifactId>
             <version>${jetty.version}</version>
-        </dependency>
+        </dependency>-->
     </dependencies>
 
     <build>
