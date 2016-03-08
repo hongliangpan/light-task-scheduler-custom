@@ -2,6 +2,7 @@ package com.lts.tasktracker.jobdispatcher;
 
 import com.google.common.base.Splitter;
 import com.google.common.base.Strings;
+import com.google.common.collect.Maps;
 import com.lts.core.domain.Action;
 import com.lts.core.domain.Job;
 import com.lts.core.json.JSON;
@@ -14,6 +15,7 @@ import com.lts.tasktracker.runner.LtsLoggerFactory;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -23,18 +25,18 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class JobRunnerDispatcher implements JobRunner {
     protected static final Logger LOGGER = LoggerFactory.getLogger(JobRunnerDispatcher.class);
-    private static final ConcurrentHashMap<String, JobRunner>
+    public static final ConcurrentHashMap<String, JobRunner>
             JOB_RUNNER_MAP = new ConcurrentHashMap<String, JobRunner>();
+    public static Map<String, JobRunnerAnnotation> ANNOTATION_MAP;
 
     static {
         try {
-            EmbedJobClient jobClient = new EmbedJobClient();
-            String packagesParam = jobClient.getConfig("jobRunnerScannerPackages");
+            String packagesParam = EmbedJobClient.getConfig("jobRunnerScannerPackages");
             if (!Strings.isNullOrEmpty(packagesParam)) {
                 List<String> packages = Splitter.on(",").splitToList(packagesParam);
-                JobRunnerScanner.scans(packages, JOB_RUNNER_MAP);
+                ANNOTATION_MAP= JobRunnerScanner.scans(packages, JOB_RUNNER_MAP);
             }
-            jobClient.submitJob();
+            EmbedJobClient.submitJob();
         } catch (Exception e) {
             LOGGER.error(e.getMessage(), e);
         }

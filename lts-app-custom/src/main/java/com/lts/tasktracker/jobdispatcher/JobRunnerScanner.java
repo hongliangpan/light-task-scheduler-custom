@@ -23,23 +23,26 @@ import java.util.*;
 public class JobRunnerScanner {
     protected static final Logger LOGGER = LoggerFactory.getLogger(JobRunnerScanner.class);
 
-    public static void scans(String scanPaths, Map<String, JobRunner> map) throws Exception {
+    public static Map<String, JobRunnerAnnotation> scans(String scanPaths, Map<String, JobRunner> map) throws Exception {
         List<String> packages = Lists.newArrayList();
         packages.add(scanPaths);
-        scans(packages, map);
+        return scans(packages, map);
     }
 
-    public static void scans(String[] packages, Map<String, JobRunner> map) throws InstantiationException, IllegalAccessException {
-        scans(Arrays.asList(packages), map);
+    public static Map<String, JobRunnerAnnotation> scans(String[] packages, Map<String, JobRunner> map) throws InstantiationException, IllegalAccessException {
+      return scans(Arrays.asList(packages), map);
     }
 
-    public static void scans(List<String> packages, Map<String, JobRunner> map) throws InstantiationException, IllegalAccessException {
+    public static Map<String, JobRunnerAnnotation> scans(List<String> packages, Map<String, JobRunner> map) throws InstantiationException, IllegalAccessException {
         Reflections reflections = getReflection(packages);
         Set<Class<?>> annotations = reflections.getTypesAnnotatedWith(JobRunnerAnnotation.class);
+        Map<String, JobRunnerAnnotation> result = Maps.newConcurrentMap();
         for (Class<?> clazz : annotations) {
             JobRunnerAnnotation runnerTask = clazz.getAnnotation(JobRunnerAnnotation.class);
             map.put(runnerTask.type(), (JobRunner) clazz.newInstance());
+            result.put(runnerTask.type(),runnerTask);
         }
+        return result;
     }
 
     /**

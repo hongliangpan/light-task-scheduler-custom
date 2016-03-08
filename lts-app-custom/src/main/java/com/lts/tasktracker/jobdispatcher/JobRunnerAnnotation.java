@@ -17,4 +17,8 @@ public @interface JobRunnerAnnotation {
      */
     String type();
 
+    /**
+     * 执行时间，crontab
+     */
+    String cron();
 }
