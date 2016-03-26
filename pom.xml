@@ -16,7 +16,7 @@
     <modules>
         <module>lts-app-custom</module>
         <module>lts-admin-custom</module>
-        <module>lts-startup</module>
+        <!--<module>lts-startup</module>-->
     </modules>
 
     <properties>

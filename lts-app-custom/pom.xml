@@ -12,7 +12,7 @@
 
 	<groupId>com.lts</groupId>
     <artifactId>lts-app-custom</artifactId>
-	<version>1.6.5-SNAPSHOT</version>
+	<version>1.6.5</version>
     <packaging>jar</packaging>
 
     <properties>
