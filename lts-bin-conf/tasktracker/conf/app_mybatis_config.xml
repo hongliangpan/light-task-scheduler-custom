@@ -17,7 +17,7 @@
         <setting name="defaultStatementTimeout" value="25000"/>
     </settings>
     <plugins>
-        <plugin interceptor="com.glodon.app.base.service.mybatis.plugin.PageInterceptor">
+        <plugin interceptor="com.abc.app.base.service.mybatis.plugin.PageInterceptor">
             <property name="databaseType" value="postgres"/>
         </plugin>
     </plugins>

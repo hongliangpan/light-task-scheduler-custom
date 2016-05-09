@@ -70,6 +70,6 @@ public class JobRunnerScanner {
 
     public static void main(String[] args) throws Exception {
         Map<String, JobRunner> map = Maps.newHashMap();
-        new JobRunnerScanner().scans("com.glodon.ysg", map);
+        new JobRunnerScanner().scans("com.abc.module", map);
     }
 }
