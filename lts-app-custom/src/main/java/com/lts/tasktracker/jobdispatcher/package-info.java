@@ -21,7 +21,7 @@ public class GatherMetricJobRunner implements JobRunner
 3.自动扫描作业JobRunnerDispatcher,配置扫描的package
  static {
         try {
-            JobRunnerScanner.scan("com.glodon.ysg", JOB_RUNNER_MAP);
+            JobRunnerScanner.scan("com.abc.module", JOB_RUNNER_MAP);
         } catch (Exception e) {
             LOGGER.error(e.getMessage(),e);
         }
