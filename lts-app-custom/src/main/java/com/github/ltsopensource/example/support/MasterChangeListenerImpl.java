@@ -1,8 +1,8 @@
-package com.lts.example.support;
+package com.github.ltsopensource.example.support;
 
-import com.lts.core.cluster.Node;
-import com.lts.core.commons.utils.StringUtils;
-import com.lts.core.listener.MasterChangeListener;
+import com.github.ltsopensource.core.cluster.Node;
+import com.github.ltsopensource.core.commons.utils.StringUtils;
+import com.github.ltsopensource.core.listener.MasterChangeListener;
 
 /**
  * @author Robert HG (254963746@qq.com) on 3/6/15.

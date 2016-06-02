@@ -1,7 +1,7 @@
 /**
  * Created by 28797575@qq.com hongliangpan on 2016/2/29.
  */
-package com.lts.tasktracker.jobdispatcher;
+package com.github.ltsopensource.tasktracker.jobdispatcher;
 
 
 // 作业开发部署
@@ -11,7 +11,7 @@ package com.lts.tasktracker.jobdispatcher;
 1. 配置JobRunnerDispatcher为JobRunner
 tasktracker.cfg文件中
 # JobRunner 任务执行类
-jobRunnerClass=com.lts.tasktracker.jobdispatcher.JobRunnerDispatcher
+jobRunnerClass=com.github.ltsopensource.tasktracker.jobdispatcher.JobRunnerDispatcher
 
 2. 开发新的作业
 //添加 类注解 @RunnerTask(type= "type")
@@ -31,16 +31,16 @@ public class GatherMetricJobRunner implements JobRunner
 5. 配置参数
 
 # JobRunner 任务执行类
-jobRunnerClass=com.lts.tasktracker.jobdispatcher.JobRunnerDispatcher
+jobRunnerClass=com.github.ltsopensource.tasktracker.jobdispatcher.JobRunnerDispatcher
 
 # 自动扫描作业包，逗号分隔
-jobRunnerScannerPackages=com.abc.module,com.lts.job
+jobRunnerScannerPackages=com.abc.module,com.github.ltsopensource.job
 
 # 是否内嵌JobClient
 isEmbedJobClient=true
 
 # 提交作业类，初始化一些作业，可以通过admin-web修改作业信息
-jobSubmitterClass=com.lts.tasktracker.jobdispatcher.UbaJobSubmitter
+jobSubmitterClass=com.github.ltsopensource.tasktracker.jobdispatcher.UbaJobSubmitter
 # 自定义的cron，可以通过admin-web修改作业信息
 mySubmitCronExpression=0 53/10 2-3 * * ?
 */

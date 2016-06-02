@@ -1,17 +1,18 @@
-package com.lts.tasktracker.jobdispatcher;
+package com.github.ltsopensource.tasktracker.jobdispatcher;
 
+import com.github.ltsopensource.tasktracker.runner.JobContext;
 import com.google.common.base.Splitter;
 import com.google.common.base.Strings;
 import com.google.common.collect.Maps;
-import com.lts.core.domain.Action;
-import com.lts.core.domain.Job;
-import com.lts.core.json.JSON;
-import com.lts.core.logger.Logger;
-import com.lts.core.logger.LoggerFactory;
-import com.lts.tasktracker.Result;
-import com.lts.tasktracker.logger.BizLogger;
-import com.lts.tasktracker.runner.JobRunner;
-import com.lts.tasktracker.runner.LtsLoggerFactory;
+import com.github.ltsopensource.core.domain.Action;
+import com.github.ltsopensource.core.domain.Job;
+import com.github.ltsopensource.core.json.JSON;
+import com.github.ltsopensource.core.logger.Logger;
+import com.github.ltsopensource.core.logger.LoggerFactory;
+import com.github.ltsopensource.tasktracker.Result;
+import com.github.ltsopensource.tasktracker.logger.BizLogger;
+import com.github.ltsopensource.tasktracker.runner.JobRunner;
+import com.github.ltsopensource.tasktracker.runner.LtsLoggerFactory;
 
 import java.util.Iterator;
 import java.util.List;
@@ -43,7 +44,8 @@ public class JobRunnerDispatcher implements JobRunner {
     }
 
     @Override
-    public Result run(Job job) throws Throwable {
+    public Result run(JobContext jobContext) throws Throwable {
+        Job job= jobContext.getJob();
         String type = job.getParam("type");
         if (Strings.isNullOrEmpty(type)) {
             return new Result(Action.EXECUTE_FAILED, "没有类型参数.type is null");
@@ -52,7 +54,7 @@ public class JobRunnerDispatcher implements JobRunner {
         if (null == jobRunner) {
             return new Result(Action.EXECUTE_FAILED, "没有注册作业.type=" + type);
         }
-        Result result = jobRunner.run(job);
+        Result result = jobRunner.run(jobContext);
         BizLogger bizLogger = LtsLoggerFactory.getBizLogger();
         bizLogger.info("任务完成:" + JSON.toJSONString(result));
         return result;

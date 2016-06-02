@@ -1,18 +1,18 @@
-package com.lts.tasktracker.jobdispatcher;
+package com.github.ltsopensource.tasktracker.jobdispatcher;
 
-import com.lts.core.cluster.Node;
-import com.lts.core.commons.utils.CollectionUtils;
-import com.lts.core.commons.utils.StringUtils;
-import com.lts.core.domain.Job;
-import com.lts.core.domain.JobResult;
-import com.lts.core.json.JSON;
-import com.lts.core.listener.MasterChangeListener;
-import com.lts.core.logger.Logger;
-import com.lts.core.logger.LoggerFactory;
-import com.lts.jobclient.JobClient;
-import com.lts.jobclient.RetryJobClient;
-import com.lts.jobclient.domain.Response;
-import com.lts.jobclient.support.JobCompletedHandler;
+import com.github.ltsopensource.core.cluster.Node;
+import com.github.ltsopensource.core.commons.utils.CollectionUtils;
+import com.github.ltsopensource.core.commons.utils.StringUtils;
+import com.github.ltsopensource.core.domain.Job;
+import com.github.ltsopensource.core.domain.JobResult;
+import com.github.ltsopensource.core.json.JSON;
+import com.github.ltsopensource.core.listener.MasterChangeListener;
+import com.github.ltsopensource.core.logger.Logger;
+import com.github.ltsopensource.core.logger.LoggerFactory;
+import com.github.ltsopensource.jobclient.JobClient;
+import com.github.ltsopensource.jobclient.RetryJobClient;
+import com.github.ltsopensource.jobclient.domain.Response;
+import com.github.ltsopensource.jobclient.support.JobCompletedHandler;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -36,7 +36,7 @@ public class UbaJobSubmitterDemo implements JobSubmitter {
             jobClient.setNodeGroup(getConfig("nodeGroup")+"client");
             jobClient.setClusterName(getConfig("clusterName"));
             jobClient.setRegistryAddress(getConfig("registryAddress"));
-            jobClient.setJobFinishedHandler(new JobCompletedHandlerImpl());
+            jobClient.setJobCompletedHandler(new JobCompletedHandlerImpl());
             // master 节点变化监听器，当有集群中只需要一个节点执行某个事情的时候，可以监听这个事件
             jobClient.addMasterChangeListener(new MasterChangeListenerImpl());
             jobClient.start();

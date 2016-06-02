@@ -1,10 +1,10 @@
-package com.lts.example.support;
+package com.github.ltsopensource.example.support;
 
-import com.lts.core.commons.utils.StringUtils;
-import com.lts.core.domain.Job;
-import com.lts.core.exception.JobSubmitException;
-import com.lts.jobclient.JobClient;
-import com.lts.jobclient.domain.Response;
+import com.github.ltsopensource.core.commons.utils.StringUtils;
+import com.github.ltsopensource.core.domain.Job;
+import com.github.ltsopensource.core.exception.JobSubmitException;
+import com.github.ltsopensource.jobclient.JobClient;
+import com.github.ltsopensource.jobclient.domain.Response;
 
 import java.io.BufferedReader;
 import java.io.IOException;
