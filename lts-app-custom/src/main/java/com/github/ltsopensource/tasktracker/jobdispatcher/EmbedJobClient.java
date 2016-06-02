@@ -1,13 +1,13 @@
-package com.lts.tasktracker.jobdispatcher;
+package com.github.ltsopensource.tasktracker.jobdispatcher;
 
 import com.google.common.io.Resources;
-import com.lts.core.commons.utils.ClassHelper;
-import com.lts.core.logger.Logger;
-import com.lts.core.logger.LoggerFactory;
-import com.lts.example.support.JobCompletedHandlerImpl;
-import com.lts.example.support.MasterChangeListenerImpl;
-import com.lts.jobclient.JobClient;
-import com.lts.jobclient.RetryJobClient;
+import com.github.ltsopensource.core.commons.utils.ClassHelper;
+import com.github.ltsopensource.core.logger.Logger;
+import com.github.ltsopensource.core.logger.LoggerFactory;
+import com.github.ltsopensource.example.support.JobCompletedHandlerImpl;
+import com.github.ltsopensource.example.support.MasterChangeListenerImpl;
+import com.github.ltsopensource.jobclient.JobClient;
+import com.github.ltsopensource.jobclient.RetryJobClient;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -47,7 +47,7 @@ public class EmbedJobClient {
             jobClient.setNodeGroup(getConfig("nodeGroup") + "client");
             jobClient.setClusterName(getConfig("clusterName"));
             jobClient.setRegistryAddress(getConfig("registryAddress"));
-            jobClient.setJobFinishedHandler(new JobCompletedHandlerImpl());
+            jobClient.setJobCompletedHandler(new JobCompletedHandlerImpl());
             // master 节点变化监听器，当有集群中只需要一个节点执行某个事情的时候，可以监听这个事件
             jobClient.addMasterChangeListener(new MasterChangeListenerImpl());
             jobClient.start();

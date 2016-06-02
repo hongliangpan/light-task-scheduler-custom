@@ -5,13 +5,13 @@
     <modelVersion>4.0.0</modelVersion>
 	<parent>
         <artifactId>lts-parent</artifactId>
-        <groupId>com.lts</groupId>
-        <version>1.6.5-SNAPSHOT</version>
+        <groupId>com.github.ltsopensource</groupId>
+        <version>1.6.8</version>
     </parent>
-    <groupId>com.lts</groupId>
+    <groupId>com.github.ltsopensource</groupId>
     <artifactId>lts-pan</artifactId>
     <packaging>pom</packaging>
-    <version>1.6.5-SNAPSHOT</version>
+    <version>1.6.8</version>
     <url>https://github.com/ltsopensource/light-task-scheduler.git</url>
     <modules>
         <module>lts-app-custom</module>

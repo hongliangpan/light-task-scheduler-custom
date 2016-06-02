@@ -1,11 +1,11 @@
-package com.lts.tasktracker.jobdispatcher;
+package com.github.ltsopensource.tasktracker.jobdispatcher;
 
 import com.google.common.base.Predicate;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.lts.core.logger.Logger;
-import com.lts.core.logger.LoggerFactory;
-import com.lts.tasktracker.runner.JobRunner;
+import com.github.ltsopensource.core.logger.Logger;
+import com.github.ltsopensource.core.logger.LoggerFactory;
+import com.github.ltsopensource.tasktracker.runner.JobRunner;
 import org.reflections.Reflections;
 import org.reflections.scanners.*;
 import org.reflections.util.ClasspathHelper;

@@ -1,9 +1,9 @@
-package com.lts.example.api;
+package com.github.ltsopensource.example.api;
 
-import com.lts.core.spi.SpiExtensionKey;
-import com.lts.example.job.TestJobRunner;
-import com.lts.example.support.MasterChangeListenerImpl;
-import com.lts.tasktracker.TaskTracker;
+import com.github.ltsopensource.core.constant.ExtConfig;
+import com.github.ltsopensource.example.job.TestJobRunner;
+import com.github.ltsopensource.example.support.MasterChangeListenerImpl;
+import com.github.ltsopensource.tasktracker.TaskTracker;
 
 
 /**
@@ -33,7 +33,7 @@ public class TaskTrackerTest {
         taskTracker.addConfig("lts.monitor.url", "http://localhost:9090/");
 //         taskTracker.addConfig("lts.remoting", "mina");
 //        taskTracker.addConfig("lts.remoting.serializable.default", "fastjson");
-        taskTracker.addConfig(SpiExtensionKey.LTS_JSON, "ltsjson");
+        taskTracker.addConfig(ExtConfig.LTS_JSON, "ltsjson");
         taskTracker.start();
 
         Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {

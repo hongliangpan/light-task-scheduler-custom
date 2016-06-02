@@ -1,8 +1,8 @@
-package com.lts.example.support;
+package com.github.ltsopensource.example.support;
 
-import com.lts.core.commons.utils.CollectionUtils;
-import com.lts.core.domain.JobResult;
-import com.lts.jobclient.support.JobCompletedHandler;
+import com.github.ltsopensource.core.commons.utils.CollectionUtils;
+import com.github.ltsopensource.core.domain.JobResult;
+import com.github.ltsopensource.jobclient.support.JobCompletedHandler;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

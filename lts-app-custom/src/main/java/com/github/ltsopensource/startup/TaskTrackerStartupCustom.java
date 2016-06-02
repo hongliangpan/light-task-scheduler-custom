@@ -1,6 +1,8 @@
-package com.lts.startup;
+package com.github.ltsopensource.startup;
 
-import com.lts.tasktracker.TaskTracker;
+
+import com.github.ltsopensource.startup.tasktracker.*;
+import com.github.ltsopensource.tasktracker.TaskTracker;
 
 import java.util.Map;
 

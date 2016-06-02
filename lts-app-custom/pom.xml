@@ -4,9 +4,9 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.lts</groupId>
+	<groupId>com.github.ltsopensource</groupId>
     <artifactId>lts-app-custom</artifactId>
-	<version>1.6.5</version>
+	<version>1.6.8</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -18,7 +18,7 @@
         <postgresql.version>9.3-1102-jdbc41</postgresql.version>
         <junit.version>4.11</junit.version>
         <maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
-        <lts.version>1.6.5-SNAPSHOT</lts.version>
+        <lts.version>1.6.8</lts.version>
         <jedis.version>2.7.3</jedis.version>
         <fastjson.version>1.2.7</fastjson.version>
         <leveldbjni.version>1.8</leveldbjni.version>
@@ -104,40 +104,29 @@
 
         <!-- lts -->
         <dependency>
-            <groupId>com.lts</groupId>
+            <groupId>com.github.ltsopensource</groupId>
             <artifactId>lts-jobtracker</artifactId>
             <version>${lts.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.lts</groupId>
+            <groupId>com.github.ltsopensource</groupId>
             <artifactId>lts-tasktracker</artifactId>
             <version>${lts.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.lts</groupId>
+            <groupId>com.github.ltsopensource</groupId>
             <artifactId>lts-jobclient</artifactId>
             <version>${lts.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.lts</groupId>
+            <groupId>com.github.ltsopensource</groupId>
             <artifactId>lts-core</artifactId>
             <version>${lts.version}</version>
         </dependency>
 
         <dependency>
-            <groupId>com.lts</groupId>
-            <artifactId>lts-logger</artifactId>
-            <version>${lts.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.lts</groupId>
-            <artifactId>lts-queue</artifactId>
-            <version>${lts.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.lts</groupId>
-            <artifactId>lts-startup-tasktracker</artifactId>
+            <groupId>com.github.ltsopensource</groupId>
+            <artifactId>lts-startup</artifactId>
             <version>${lts.version}</version>
         </dependency>
 

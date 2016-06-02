@@ -1,8 +1,8 @@
-package com.lts.example.api;
+package com.github.ltsopensource.example.api;
 
-import com.lts.example.support.MasterChangeListenerImpl;
-import com.lts.jobtracker.JobTracker;
-import com.lts.jobtracker.support.policy.OldDataDeletePolicy;
+import com.github.ltsopensource.example.support.MasterChangeListenerImpl;
+import com.github.ltsopensource.jobtracker.JobTracker;
+import com.github.ltsopensource.jobtracker.support.policy.OldDataDeletePolicy;
 
 /**
  * @author Robert HG (254963746@qq.com) on 8/13/14.
